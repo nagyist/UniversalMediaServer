@@ -2519,8 +2519,8 @@ public class ImagesUtil {
 			}
 
 			double scale = Math.min(
-				(double) source.getWidth() / (flag.getWidth() * 2),
-				(double) source.getHeight() / (flag.getHeight() * 2)
+				(double) source.getWidth() / (flag.getWidth() * 1.3),
+				(double) source.getHeight() / (flag.getHeight() * 1.3)
 			);
 			int flagHorizontalResolution = (int) Math.round(flag.getWidth() * scale);
 			int flagVerticalResolution = (int) Math.round(flag.getHeight() * scale);
