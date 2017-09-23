@@ -158,6 +158,27 @@ public final class Iso639 {
 
 		return null;
 	}
+	
+	/**
+	 *
+	 * Returns the ISO 639_2 code for the given language name.
+	 * Will return <code>null</code> if no match can be found.
+	 *
+	 * @param language the language name.
+	 * @return The ISO 639_2 code.
+	 */
+	public static String getISO639_2CodeForLanguageName(String language) {
+		if (language == null) {
+			return null;
+		}
+
+		String codes[] = links.get(language);
+		if (codes != null) {
+			return codes[codes.length - 1];
+		}
+		
+		return null;
+	}
 
 	/**
 	 * Returns the ISO code, except when the alias "loc" is used. In that case
@@ -350,7 +371,7 @@ public final class Iso639 {
 		putCode("Bini", null, "bin", "bin");
 		putCode("Bislama", "bi", "bis", "bis");
 		putCode("Bosnian", "bs", "bos", "bos");
-		putCode("Brazilian Portuguse", null, "pob", "pob");
+		putCode("Brazilian Portuguese", null, "pob", "pob");
 		putCode("Braj", null, "bra", "bra");
 		putCode("Breton", "br", "bre", "bre");
 		putCode("Buginese", null, "bug", "bug");
@@ -373,6 +394,7 @@ public final class Iso639 {
 		putCode("Chibcha", null, "chb", "chb");
 		putCode("Chichewa; Nyanja", "ny", "nya", "nya");
 		putCode("Chinese", "zh", "zho", "chi");
+		putCode("Chinese AAC", "zh", "zho", "chi"); // dirty fix when language is taken from MediaInfo "Title"
 		putCode("Chinook jargon", null, "chn", "chn");
 		putCode("Chipewyan", null, "chp", "chp");
 		putCode("Choctaw", null, "cho", "cho");
@@ -449,6 +471,7 @@ public final class Iso639 {
 		putCode("Grebo", null, "grb", "grb");
 		putCode("Greek, Ancient (to 1453)", null, "grc", "grc");
 		putCode("Greek, Modern (1453-)", "el", "ell", "gre");
+		putCode("Greek", "el", "ell", "gre");
 		putCode("Guarani", "gn", "grn", "grn");
 		putCode("Gujarati", "gu", "guj", "guj");
 		putCode("Gwich-in", null, "gwi", "gwi");
@@ -456,6 +479,7 @@ public final class Iso639 {
 		putCode("Hausa", "ha", "hau", "hau");
 		putCode("Hawaiian", null, "haw", "haw");
 		putCode("Hebrew", "he", "heb", "heb");
+		putCode("Hebrwe", "he", "heb", "heb"); // dirty fix when language is taken from MediaInfo "Title"
 		putCode("Herero", "hz", "her", "her");
 		putCode("Hiligaynon", null, "hil", "hil");
 		putCode("Himachali", null, "him", "him");
@@ -548,6 +572,7 @@ public final class Iso639 {
 		putCode("Maltese", "mt", "mlt", "mlt");
 		putCode("Manchu", null, "mnc", "mnc");
 		putCode("Mandar", null, "mdr", "mdr");
+		putCode("Mandarin", null, "mdr", "mdr");
 		putCode("Mandingo", null, "man", "man");
 		putCode("Manipuri", null, "mni", "mni");
 		putCode("Manobo languages", null, "mno", "mno");

@@ -90,5 +90,11 @@ public class Iso639Test {
 		assertEquals("ISO code \"gre\" returns ISO code \"el\"", Iso639.getISOCode("gre"), "el");
 		assertEquals("ISO code \"gay\" returns ISO code \"gay\"", Iso639.getISOCode("gay"), "gay");
 		assertNull("ISO code \"loc\" returns null", Iso639.getISOCode("loc"));
+
+		// Test getISO639_2CodeForLanguageName()
+		assertEquals("Language name \"English\" returns ISO code \"eng\"", Iso639.getISO639_2CodeForLanguageName("English"), "eng");
+		assertNull("Language name \"english\" returns null", Iso639.getISO639_2CodeForLanguageName("english"));
+		assertEquals("Language name \"Czech\" returns ISO code \"cze\"", Iso639.getISO639_2CodeForLanguageName("Czech"), "cze");
+		assertNull("Language name \"Czech language\" returns null", Iso639.getISO639_2CodeForLanguageName("Czech language"));
 	}
 }

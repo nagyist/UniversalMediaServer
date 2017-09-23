@@ -2236,10 +2236,11 @@ public class ImagesUtil {
 		if (isBlank(languageCode)) {
 			return null;
 		}
-		languageCode = Iso639.getISO639_2Code(languageCode.toLowerCase(Locale.ROOT));
-		if (languageCode == null) {
-			return null;
-		}
+
+//		languageCode = Iso639.getISO639_2Code(languageCode.toLowerCase(Locale.ROOT));
+//		if (languageCode == null) {
+//			languageCode = DLNAMediaLang.UND;
+//		}
 
 		synchronized (LANGUAGE_FLAGS_CACHE) {
 			// Remove stale entries from the cache, leave null entries
