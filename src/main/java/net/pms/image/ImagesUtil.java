@@ -2237,10 +2237,10 @@ public class ImagesUtil {
 			return null;
 		}
 
-//		languageCode = Iso639.getISO639_2Code(languageCode.toLowerCase(Locale.ROOT));
-//		if (languageCode == null) {
-//			languageCode = DLNAMediaLang.UND;
-//		}
+		languageCode = Iso639.getISO639_2Code(languageCode.toLowerCase(Locale.ROOT));
+		if (languageCode == null) {
+			languageCode = DLNAMediaLang.UND;
+		}
 
 		synchronized (LANGUAGE_FLAGS_CACHE) {
 			// Remove stale entries from the cache, leave null entries
@@ -2520,11 +2520,11 @@ public class ImagesUtil {
 			}
 
 			double scale = Math.min(
-				(double) source.getWidth() / (flag.getWidth() * 1.3),
-				(double) source.getHeight() / (flag.getHeight() * 1.3)
+				(double) source.getWidth() / (flag.getWidth() * 2),
+				(double) source.getHeight() / (flag.getHeight() * 2)
 			);
-			int flagHorizontalResolution = (int) Math.round(flag.getWidth() * scale);
-			int flagVerticalResolution = (int) Math.round(flag.getHeight() * scale);
+			int flagHorizontalResolution = (int) Math.max(Math.round(flag.getWidth() * scale), 64);
+			int flagVerticalResolution = (int) Math.max(Math.round(flag.getHeight() * scale), 64);
 			int flagHorizontalPosition = source.getWidth() - flagHorizontalResolution;
 			int flagVerticalPosition = source.getHeight() - flagVerticalResolution;
 
